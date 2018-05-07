@@ -1,0 +1,13 @@
+#!usr/bin/python3
+
+import urllib.request, json
+
+city = "Kastoria"
+api_key = "e29cb68f63cd2886c227d3835db746b3" 
+
+weather = eval(str(urllib.request.urlopen("http://api.openweathermap.org/data/2.5/weather?q={}&APPID={}".format(city, api_key)).read())[2:-1])
+
+info = weather["weather"][0]["description"].capitalize()
+temp = int(float(weather["main"]["temp"]) - 272.15)
+
+print("%s, %i °C" % (info, temp))
