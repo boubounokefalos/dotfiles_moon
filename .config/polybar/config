@@ -1,0 +1,194 @@
+;-------------------------------------------------;
+;                                                 ;
+;           Polybar config by DaRk_dOg            ;
+;                                                 ;
+;-------------------------------------------------;
+
+
+[colors]
+background = #88040811
+background-1 = #416a88
+background-2 = #638faa
+background-3 = #2b4866
+background-4 = #85aec8
+background-5 = #a2b4bf
+background-6 = #040811
+urgent = #ff0000
+
+foreground = #ffffff
+foreground-alt = #222222
+primary = #EEEFFD
+secondary = #EEEFFD
+
+
+[bar/example]
+monitor = default
+width = 1280
+height = 22
+offset-x = 0%
+offset-y = 0%
+radius = 2.0
+fixed-center = true
+top = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+line-color = #ff0000
+
+underline-size = 0
+
+border-size = 5
+border-color = #00ff0000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = Roboto:pixelsize=10;1
+font-1 = FontAwesome:pixelsize=10;1
+font-2 = sm4tik:pixelsize=10;1
+
+modules-left = mpd
+modules-center = i3
+modules-right = weather xkeyboard volume wlan date
+
+[module/i3]
+type = internal/i3
+enable-click = true
+enable-scroll = true
+wrapping-scroll = true
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+ws-icon-default = 
+
+format = <label-state> <label-mode>
+
+label-focused = %icon%
+label-focused-background = ${colors.background-4}
+label-focused-padding = 2
+
+label-unfocused = %icon%
+label-unfocused-padding = 2
+
+label-occupied = %icon%
+label-occupied-padding = 2
+
+label-urgent = %icon%
+label-urgent-background = ${colors.urgent}
+label-urgent-padding = 2
+
+label-empty = %icon%
+label-empty-foreground = #44ffffff
+label-empty-padding = 4
+
+[module/mpd]
+type = internal/mpd
+
+interval = 1
+
+host = 127.0.0.1
+port = 6600
+
+format-online =  "<label-song>  <toggle>  <label-time>"
+format-online-background = ${colors.background-5}
+format-online-foreground = ${colors.foreground}
+format-online-padding = 2
+format-offline = "<label-offline>"
+format-offline-padding = 2
+format-stopped = ${self.format-online}  
+format-stop-padding = 2
+label-time = %elapsed% / %total%
+label-offline =  mpd offline
+
+icon-play = 
+icon-pause = 
+
+[module/wlan]
+type = internal/network
+interface = wlx0022433cf79c
+interval = 3.0
+
+format-connected =  <ramp-signal>
+format-connected-padding = 2
+format-connected-background = ${colors.background-1}
+
+format-disconnected-padding = 1
+format-disconnected-background = #ff0000
+
+ramp-signal-0 = 0
+ramp-signal-1 = 1
+ramp-signal-2 = 2
+ramp-signal-3 = 3
+ramp-signal-4 = 4
+ramp-signal-5 = 5
+ramp-signal-6 = 6
+ramp-signal-7 = 7
+
+[module/date]
+type = internal/date
+interval = 1
+
+time = "%H:%M"
+time-alt = "%Y-%m-%d, %H:%M"
+
+format-prefix-foreground = ${colors.foreground-alt}
+format-padding = 2
+format-background = ${colors.background-3}
+format-background-underline = ${colors.background-3}
+format = %{A1:gsimplecal & disown:}  <label> %{A}
+label = %date% %time%
+
+[module/volume]
+type = internal/volume
+
+format-muted-background = ${colors.background-1}
+format-volume-background = ${colors.background-1}
+format-volume-padding = 2
+format-volume = "<ramp-volume> <label-volume>"
+label-muted = " mute"
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 =  
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+label-layout =  %layout%
+label-layout-padding = 2
+label-layout-background = ${colors.background-1}
+
+label-indicator-padding = 2
+label-indicator-background = ${colors.background-1}
+
+[module/weather]
+type = custom/script
+interval = 10
+format-background = ${colors.background-2}
+format-padding = 2
+format = <label>
+format-prefix = " "
+exec = python3 ~/.config/polybar/weather
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 30
+margin-bottom = 5
+wm-restack = i3
