@@ -1,0 +1,2 @@
+#!/bin/sh
+'feh' '--bg-scale' '/home/USERNAME/wallpaper/moon_wallpaper.jpg' 
