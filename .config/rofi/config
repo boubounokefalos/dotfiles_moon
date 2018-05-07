@@ -1,0 +1,46 @@
+! === rofi ===
+
+rofi.modi:                           drun,window,run
+rofi.sidebar-mode:                   true
+rofi.terminal:                       urxvt
+rofi.ssh-client:                     ssh
+rofi.ssh-command:                    {terminal} -e "{ssh-client} {host}"
+
+rofi.width:                          34
+rofi.lines:                          8
+rofi.columns:                        1
+rofi.font:                           Roboto 8
+rofi.fg:                             #cc040811
+rofi.bc:                             #88040811
+rofi.bg:                             #5d729f
+rofi.fg-active:                      #34405a
+rofi.fg-urgent:                      #34405a
+rofi.hlfg-active:                    #5e73a0
+rofi.hlfg-urgent:                    #5e73a0
+rofi.bg-active:                      #34405a
+rofi.bg-urgent:                      #34405a
+rofi.hlbg-active:                    #5d729f
+rofi.hlbg-urgent:                    #5d729f
+rofi.bgalt:                          #5671a0
+rofi.hlfg:                           #34405a
+rofi.hlbg:                           #34405a
+
+! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
+rofi.color-normal: #00040811,  #FFFFFF,  #00040811,  #638faa,  #FFFFFF
+rofi.color-urgent: #00040811,  #FFFFFF,  #00040811,  #638faa,  #FFFFFF
+rofi.color-active: #00040811,  #FFFFFF,  #00040811,  #638faa,  #FFFFFF
+
+!                  'background', 'border'
+rofi.color-window: #88040811,      #88040811
+rofi.yoffset:                        50
+rofi.xoffset:                        20
+rofi.bw:                             0
+rofi.location:                       1
+rofi.levenshtein-sort:               true
+rofi.case-sensitive:                 false
+rofi.fuzzy:                          false
+rofi.line-margin:                    0
+rofi.separator-style:                none
+rofi.hide-scrollbar:                 true
+rofi.markup-rows:                    false
+rofi.scrollbar-width:                8
