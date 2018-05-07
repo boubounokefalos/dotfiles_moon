@@ -2,8 +2,9 @@
 
 import urllib.request, json
 
-city = "Kastoria"
-api_key = "e29cb68f63cd2886c227d3835db746b3" 
+#In order to make this to work, you need to get an Openweather map key AND your city name
+city = "YOUR_CITY_NAME"
+api_key = "YOUR_OPENWEATHERMAP_API_KEY" 
 
 weather = eval(str(urllib.request.urlopen("http://api.openweathermap.org/data/2.5/weather?q={}&APPID={}".format(city, api_key)).read())[2:-1])
 
