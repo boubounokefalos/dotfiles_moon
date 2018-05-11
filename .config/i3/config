@@ -29,6 +29,9 @@ new_window 1pixel
 #Set wallpaper
 exec --no-startup-id ~/.fehbg
 
+#Start BlurMe
+exec --no-startup-id ~/.config/i3/blurme &
+
 #Exit i3wm
 bindsym $mod+shift+e exec --no-startup-id i3 workspace 10 && oblogout
 
