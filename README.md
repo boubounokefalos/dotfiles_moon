@@ -17,7 +17,7 @@ PS: This is optimal for my small laptop (1280x800) but I'm not sure it will look
 * [oblogout-fork](https://github.com/Cloudef/oblogout-fork)
 * [i3lock-fancier](https://github.com/SuperPrower/i3lock-fancier)
 * dunst
-* [compton(tryone fork](https://github.com/SuperPrower/i3lock-fancier)
+* [compton(tryone fork)](https://github.com/SuperPrower/i3lock-fancier)
 
 
 ### Moon v2
