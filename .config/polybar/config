@@ -54,7 +54,7 @@ font-2 = sm4tik:pixelsize=10;1
 
 modules-left = i3
 modules-center = mpd
-modules-right = weather updates xkeyboard volume wlan date
+modules-right = weather updates xkeyboard alsa wlan date
 
 [module/updates]
 type = custom/script
@@ -129,7 +129,7 @@ type = internal/network
 interface = wlx0022433cf79c
 interval = 3.0
 
-format-connected =  <ramp-signal>
+format-connected = %{A1:/home/darkdog/.config/i3/launch_nmtui.sh:} <ramp-signal>%{A}
 format-connected-padding = 2
 format-connected-background = ${colors.background-1}
 
@@ -150,7 +150,6 @@ type = internal/date
 interval = 1
 
 time = "%H:%M"
-time-alt = "%Y-%m-%d, %H:%M"
 
 format-prefix-foreground = ${colors.foreground-alt}
 format-padding = 2
@@ -158,14 +157,16 @@ format-background = ${colors.background-3}
 format-background-underline = ${colors.background-3}
 format = %{A1:gsimplecal & disown:}  <label> %{A}
 label = %date% %time%
+;next applies only if gsimplecal is installed
+click-left = exec gsimplecal
 
-[module/volume]
-type = internal/volume
+[module/alsa]
+type = internal/alsa
 
 format-muted-background = ${colors.background-1}
 format-volume-background = ${colors.background-1}
 format-volume-padding = 2
-format-volume = "<ramp-volume> <label-volume>"
+format-volume = %{A1:/home/darkdog/.config/i3/alsamixer.sh:}<ramp-volume> <label-volume>%{A}
 label-muted = " mute"
 
 ; Only applies if <ramp-volume> is used
