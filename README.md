@@ -14,6 +14,7 @@ PS: This is optimal for my small laptop (1280x800) but I'm not sure it will look
 * ncmpcpp
 * cava
 * oblogout
+* i3lock-fancier
 * dunst
 * compton
 
@@ -22,3 +23,4 @@ PS: This is optimal for my small laptop (1280x800) but I'm not sure it will look
 
 ![Alt text](https://raw.githubusercontent.com/boubounokefalos/dotfiles_moon/master/1.png "Title")
 ![Alt text](https://raw.githubusercontent.com/boubounokefalos/dotfiles_moon/master/2.png "Title")
+![Alt text](https://raw.githubusercontent.com/boubounokefalos/dotfiles_moon/master/3.png "Title")
