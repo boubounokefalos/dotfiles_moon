@@ -18,7 +18,16 @@
 set $mod Mod4
 
 #Enable Tap-To-CLick (device specific, set at your own hardware configuration)
-exec --no-startup-id xinput set-prop 12 252 1
+#xinput list (will give you a list of input devices; find the ID of the one which looks like a touchpad)
+#xinput list-props <device id> (which should tell you what properties you can change for the input device. You should find one called something like Tapping Enabled)
+#xinput set-prop <device id> <property id> 1 (and tapping should work)
+exec --no-startup-id xinput set-prop 12 251 1
+
+#Set alt+shift shortcut to change between 2 keyboard layouts
+exec --no-startup-id ~/.config/i3/setkeyboard.sh
+
+#Disable Numlock
+exec_always --no-startup-id numlockx off
 
 #Start Polybar
 exec polybar example
@@ -29,9 +38,6 @@ new_window 1pixel
 #Set wallpaper
 exec --no-startup-id ~/.fehbg
 
-#Start BlurMe
-exec --no-startup-id ~/.config/i3/blurme &
-
 #Exit i3wm
 bindsym $mod+shift+e exec --no-startup-id i3 workspace 10 && oblogout
 
@@ -41,12 +47,18 @@ exec --no-startup-id mpd
 #Start Compton
 exec --no-startup-id compton -b
 
-# start rofi dmenu
+#Start rofi dmenu
 bindsym $mod+d exec rofi -show window
+
+#Lockscreen
+bindsym $mod+l exec i3lock
 
 #Screenshots
 bindsym $mod+Print exec --no-startup-id ~/.config/i3/scrot_5.sh
 bindsym Print exec --no-startup-id scrot
+
+#Generate lockscreen image
+exec_always --no-startup-id /home/darkdog/lock/make_lock_bg.sh
 
 #assign apps to workspaces
 assign [class="google-chrome"] 2
@@ -60,6 +72,10 @@ assign [class="Leafpad"] 5
 assign [class="gimp-2.8"] 6
 assign [class="Gimp-2.8"] 6
 assign [class="feh"] 7
+assign [class="crx_hecfofbbdfadifpemejbbdcjmfmboohj"] 8
+assign [class="Chromium-browser"] 8
+assign [class="vlc"] 8
+assign [class="vlc"] 8
 assign [class="wicd-client.py"] 9
 assign [class="Wicd-client.py"] 9
 assign [class="lxappearance"] 9
@@ -118,7 +134,7 @@ client.background       #040811
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
-set $up l
+#set $up l
 set $down k
 set $left j
 set $right semicolon
