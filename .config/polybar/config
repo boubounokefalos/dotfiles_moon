@@ -157,8 +157,6 @@ format-background = ${colors.background-3}
 format-background-underline = ${colors.background-3}
 format = %{A1:gsimplecal & disown:}  <label> %{A}
 label = %date% %time%
-;next applies only if gsimplecal is installed
-click-left = exec gsimplecal
 
 [module/alsa]
 type = internal/alsa
