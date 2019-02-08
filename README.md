@@ -7,16 +7,17 @@ PS: This is optimal for my small laptop (1280x800) but I'm not sure it will look
 
 ### Setup:
 * i3wm
-* polybar
-* rofi
-* fff
-* urxvt (with neofetch)
+* urxvt
+* [polybar](https://github.com/jaagr/polybar)
+* [rofi](https://github.com/DaveDavenport/rofi)
+* [fff](https://github.com/dylanaraps/fff)
+* [neofetch](https://github.com/dylanaraps/neofetch)
 * ncmpcpp
-* cava
-* oblogout
-* i3lock-fancier
+* [cava](https://github.com/karlstav/cava)
+* [oblogout-fork](https://github.com/Cloudef/oblogout-fork)
+* [i3lock-fancier](https://github.com/SuperPrower/i3lock-fancier)
 * dunst
-* compton
+* [compton(tryone fork](https://github.com/SuperPrower/i3lock-fancier)
 
 
 ### Moon v2
